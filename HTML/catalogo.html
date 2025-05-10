@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tinta para Todos - Sua loja de tintas</title>
+    <link rel="icon" href="../IMG/favicon-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/estilo.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header
+        style="display: flex; justify-content: space-between; align-items: center; background-color: #003f5c; color: white; padding: 10px 20px;">
+        <div class="logo" style="font-size: 24px; font-weight: bold;"><a href="index.html"><img
+                    src="../IMG/logo-tinta-para-todos.png" alt="logo tinta para todos" width="15%"></a></div>
+        <div class="busca">
+            <i class="fas fa-search"></i>
+            <input type="text" id="buscar" placeholder="Buscar tintas...">
+            <button onclick="pesquisar()">Pesquisar</button>
+        </div>
+
+        <div class="icones">
+            <a href="#" style="color: white; margin-right: 15px;"><i class="fas fa-user"></i></a>
+            <a href="#" style="color: white;"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+
+    <main style="display: flex; padding: 20px;">
+        <aside class="filtros" style="width: 250px;margin-right: 40px;">
+            <h3>Filtros</h3>
+            <label><input type="checkbox" value="Matte" /> Matte</label><br>
+            <label><input type="checkbox" value="Seda" /> Seda</label><br>
+            <label><input type="checkbox" value="Sol & chuva" /> Sol & chuva</label><br>
+            <label><input type="checkbox" value="Diamante" /> Diamante</label><br>
+            <label><input type="checkbox" value="Oceano" /> Oceano</label><br>
+            <label><input type="checkbox" value="Branco" /> Branco</label><br>
+            <label><input type="checkbox" value="Azul" /> Azul</label><br>
+            <label><input type="checkbox" value="Preto" /> Preto</label><br>
+            <label><input type="checkbox" value="Prata" /> Prata</label><br>
+            <label><input type="checkbox" value="Rosa" /> Rosa</label><br>
+            <label><input type="checkbox" value="Anil" /> Anil</label><br>
+            <label><input type="checkbox" value="Madeira" /> Madeira</label><br>
+            <label><input type="checkbox" value="Chafariz" /> Chafariz</label><br>
+            <label><input type="checkbox" value="Pedra" /> Pedra</label><br>
+            <label><input type="checkbox" value="Campinas" /> Campinas</label><br>
+            <label><input type="checkbox" value="Indigo" /> Indigo</label><br>
+            <label><input type="checkbox" value="Resina" /> Resina</label><br>
+            <label><input type="checkbox" value="Natural" /> Natural</label><br>
+            <label><input type="checkbox" value="Harmonia" /> Harmonia</label><br>
+            <label><input type="checkbox" value="Sombra da Noite" /> Sombra da Noite</label><br>
+            <label><input type="checkbox" value="Céu Cinzento" /> Céu Cinzento</label><br>
+            <label><input type="checkbox" value="Lunar" /> Lunar</label><br>
+            <label><input type="checkbox" value="Pimenta Ardida" /> Pimenta Ardida</label><br>
+            <label><input type="checkbox" value="Interior" /> Interior</label><br>
+            <label><input type="checkbox" value="Exterior" /> Exterior</label><br>
+        </aside>
+
+        <section class="produtos" style="flex-grow: 1;">
+            <h2 id="Matte">Linha Decora Matte</h2>
+            <div class="grid" style="display: flex; gap: 20px; flex-wrap: wrap;">
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Decora-Matte-Galao.png" alt="Produto 1" style="background-color:#fff;">
+                    <h3>
+                        Matte Branco <br> Neve <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Branco neve: cor extremamente clara e neutra, semelhante ao papel limpo ou à luz intensa. Representa pureza e frieza, sem tons visíveis de outras cores. Fácil de reconhecer mesmo com daltonismo.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 164,90</span><br>
+                    <button><a href="produto-matte1.html">Comprar</a></button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc;  padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Decora-Matte-Galao.png" alt="Produto 2"
+                        style="background-color: rgb(199, 213, 232);">
+                    <h3>Matte Céu <br> Azul<br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Céu Azul: tom claro de azul, suave como o céu em dia limpo, transmite leveza e tranquilidade.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 176,35</span><br>
+                    <button><a href="produto-matte2.html">Comprar</a></button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc;  padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Decora-Matte-Galao.png" alt="Produto 1"
+                        style="background-color: rgb(176, 156, 149);">
+                    <h3>Matte Madeira Acinzentada <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Madeira Acinzentada: marrom claro com fundo cinza, lembra madeira envelhecida, de aparência neutra e elegante.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 176,27</span><br>
+                    <button><a href="produto-matte3.html">Comprar</a></button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc;  padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Decora-Matte-Galao.png" alt="Produto 2"
+                        style="background-color: rgb(129, 132, 111);">
+                    <h3>Matte Chafariz da Praça <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Chafariz da Praça: azul acinzentado, levemente frio, remete à água em sombra ou em fonte urbana.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 198,90</span><br>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Decora-Matte-Galao.png" alt="Produto 2"
+                        style="background-color: rgb(27, 50, 77);">
+                    <h3>Matte Índigo <br> Profundo<br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Índigo Profundo: azul escuro e intenso, parecido com o jeans escuro, traz sensação de profundidade e sobriedade.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 270,57</span><br>
+                    <button>Comprar</button>
+                </div>
+
+            </div>
+
+            <h2 id="Seda">Linha Decora Seda</h2>
+            <div class="grid" style="display: flex; gap: 20px; flex-wrap: wrap;">
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Decora-Seda-Galao.png" alt="Produto 1" style="background-color:#888494;">
+                    <h3>Seda Sombra da <br> Noite<br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Sombra da Noite: tom quase preto, com leve nuance azulada, lembra o céu noturno sem luz.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 205,32</span><br>
+                    <button><a href="produto-seda1.html">Comprar</a></button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Decora-Seda-Galao.png" alt="Produto 2" style="background-color: #383434;">
+                    <h3>Seda Lápis <br> Preto <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Lápis Preto: preto puro, forte e uniforme, semelhante à ponta de um lápis grafite novo.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 228,55</span><br>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Decora-Seda-Galao.png" alt="Produto 1" style="background-color: #283c64;">
+                    <h3>Seda Anil <br> Intenso <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Anil Intenso: azul vibrante e marcante, mais escuro que o azul céu, com presença visual forte.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 268,88</span><br>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Decora-Seda-Galao.png" alt="Produto 2" style="background-color: #d3bbbb;">
+                    <h3>Seda Rosa <br> Empoeirada <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Rosa Empoeirada: rosa suave com toque acinzentado, delicado e discreto, parecido com pétalas secas.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 214,07</span><br>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Decora-Seda-Galao.png" alt="Produto 2" style="background-color:#303444;">
+                    <h3>Seda Profundeza do Oceano <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Profundeza do Oceano: azul escuro acinzentado, profundo e sereno como o fundo do mar.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 254,69</span><br>
+                    <button>Comprar</button>
+                </div>
+
+            </div>
+
+            <h2 id="S&C">Linha Proteção Sol & Chuva</h2>
+            <div class="grid" style="display: flex; gap: 20px; flex-wrap: wrap;">
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Sol---Chuva-Pintura-Impermeabilizante-Galao.png" alt="Produto 1"
+                        style="background-color: #c4c4cb;">
+                    <h3>Sol & Chuva Troféu de Prata <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Troféu de Prata: cinza metálico claro, com aparência brilhante e sofisticada, semelhante à prata polida.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 214,59</span><br>
+                    <button><a href="produto-S&C1.html">Comprar</a></button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Sol---Chuva-Pintura-Impermeabilizante-Galao.png" alt="Produto 2"
+                        style="background-color: #ac642c;">
+                    <h3>Sol & Chuva Resina Incolor <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Resina Incolor: tom quase branco ou transparente, neutro e discreto, usado como acabamento ou base.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 124,90</span><br>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Sol---Chuva-Pintura-Impermeabilizante-Galao.png" alt="Produto 1"
+                        style="background-color: #6c645c;">
+                    <h3>Sol & Chuva Pedra <br> Alta <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Pedra Alta: cinza claro com um fundo amarelado, lembra pedras de construção claras, firme e neutro.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 235,86</span><br>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Sol---Chuva-Pintura-Impermeabilizante-Galao.png" alt="Produto 2"
+                        style="background-color: #9cc4bc;">
+                    <h3>Sol & Chuva Campinas Maduras <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Campinas Maduras: verde terroso com leve marrom, como campos ressecados ou folhas secas.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 189,45</span><br>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Sol---Chuva-Pintura-Impermeabilizante-Galao.png" alt="Produto 2"
+                        style="background-color: #9c9c98;">
+                    <h3>Sol & Chuva Céu Cinzento <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Céu Cinzento: cinza médio suave, semelhante ao céu nublado, transmite calma e neutralidade.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 203,96</span><br>
+                    <button>Comprar</button>
+                </div>
+
+            </div>
+
+            <h2 id="Diamante">Linha Decora Diamante</h2>
+            <div class="grid" style="display: flex; gap: 20px; flex-wrap: wrap;">
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Decora-Diamante-Galao.png" alt="Produto 1" style="background-color:#d8d4d4;">
+                    <h3>Diamante Superfície Lunar <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Superfície Lunar: cinza claro e frio, lembra o tom visto em imagens da lua, com aparência limpa e futurista.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 215,35</span><br>
+                    <button><a href="produto-diamante1.html">Comprar</a></button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Decora-Diamante-Galao.png" alt="Produto 2" style="background-color:#dbebf2;">
+                    <h3>Diamante Azul Diamante <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Azul Diamante: azul claro com leve brilho, fresco e luminoso como uma joia sob luz forte.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 209,96</span><br>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Decora-Diamante-Galao.png" alt="Produto 2"
+                        style="background-color: #483c3c;">
+                    <h3>Diamante Harmonia Intensa <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Harmonia Intensa: verde escuro equilibrado, com aparência natural, como folhas densas sob sombra.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 244,44
+                    </span><br>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Decora-Diamante-Galao.png" alt="Produto 1"
+                        style="background-color: #106c44;">
+                    <h3>Diamante Espetáculo Natural <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Espetáculo Natural: laranja terroso e quente, semelhante à luz do pôr do sol em paisagem seca.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 252,62</span><br>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="produto" style="border: 1px solid #ccc; padding: 10px; width: 200px;">
+                    <img src="../IMG/Coral-Decora-Diamante-Galao.png" alt="Produto 2"
+                        style="background-color: #b32c24;">
+                    <h3>Diamante Pimenta Ardida <br>
+                        <div class="tooltip-container">
+                            <span class="tooltip-btn"
+                                data-tooltip="Pimenta Ardida: vermelho intenso com toque quente e vibrante, remete à cor de pimenta fresca.">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </h3>
+                    <span>R$ 372,82</span><br>
+                    <button>Comprar</button>
+                </div>
+
+            </div>
+
+
+        </section>
+    </main>
+
+
+
+    <div class="topbar" style="background-color: #003f5c; color: white; text-align: center; padding: 10px;">
+        <div class="left">
+            <a href="#">Ajuda</a>
+            <a href="#">Fale Conosco</a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; background-color: #003f5c; color: white; padding: 10px;">
+        <p>&copy; 2025 Tinta para Todos - Sua loja de tintas. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const checkboxes = document.querySelectorAll(".filtros input[type='checkbox']");
+        checkboxes.forEach(cb => {
+            cb.addEventListener("change", filtrarProdutos);
+        });
+
+        function filtrarProdutos() {
+            const filtrosSelecionados = Array.from(checkboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value.toLowerCase());
+
+            document.querySelectorAll(".produto").forEach(produto => {
+                const nome = produto.querySelector("h3").innerText.toLowerCase();
+                if (filtrosSelecionados.length === 0 ||
+                    filtrosSelecionados.some(filtro => nome.includes(filtro))) {
+                    produto.style.display = "block";
+                } else {
+                    produto.style.display = "none";
+                }
+            });
+        }
+    });
+
+    function pesquisar() {
+        const input = document.getElementById('buscar').value.toLowerCase();
+        const produtos = document.querySelectorAll('.produto');
+
+        produtos.forEach(produto => {
+            const nome = produto.querySelector('h3').textContent.toLowerCase();
+
+            if (nome.includes(input)) {
+                produto.style.display = 'block';
+            } else {
+                produto.style.display = 'none';
+            }
+        });
+    }
+
+   
+    document.getElementById('buscar').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            pesquisar();
+        }
+    });
+
+</script>
