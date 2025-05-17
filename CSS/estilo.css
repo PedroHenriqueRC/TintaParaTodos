@@ -28,7 +28,7 @@ header {
 }
 
 .logo {
-    width: 50%;
+    /* width: 50%; */
     z-index: 2;
 }
 
@@ -121,9 +121,10 @@ main {
 }
 
 .filtros {
-    width: 250px;
+    width: 200px;
+    margin-right: 0px;;
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
     border: 1px solid #ddd;
     margin: 1rem 0 13rem 0;
