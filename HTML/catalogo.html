@@ -14,8 +14,11 @@
 <body>
     <header
         style="display: flex; justify-content: space-between; align-items: center; background-color: #003f5c; color: white; padding: 10px 20px;">
-        <div class="logo" style="font-size: 24px; font-weight: bold;"><a href="index.html"><img
-                    src="../IMG/logo-tinta-para-todos.png" alt="logo tinta para todos" width="15%"></a></div>
+        <a href="index.html">
+            <div class="logo">
+                <img src="../IMG/logo-tinta-para-todos.png" alt="logo tinta para todos" width="100%">
+            </div>
+        </a>
         <div class="busca">
             <i class="fas fa-search"></i>
             <input type="text" id="buscar" placeholder="Buscar tintas...">
@@ -433,7 +436,7 @@
         });
     }
 
-   
+
     document.getElementById('buscar').addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
             pesquisar();

@@ -85,9 +85,9 @@ section,
 }
 
 .banner {
-  background: url("../IMG/casa-contemporanea-sala-interior-e-mobiliario-moderno.png") no-repeat center center/cover;
+  background: url("../IMG/fundo-do-container.png") no-repeat center center/cover;
   color: #fff;
-  padding: 6rem 0;
+  padding: 10rem 0;
   text-align: center;
 }
 

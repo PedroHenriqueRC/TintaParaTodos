@@ -80,7 +80,7 @@ header::after {
 }
 
 .produto-imagem img {
-  width: 89%;
+  width: 100%;
   border-radius: 5px;
 }
 

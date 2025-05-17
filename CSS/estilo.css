@@ -28,11 +28,14 @@ header {
 }
 
 .logo {
-    /* width: 50%; */
+    width: 123px;
+    height: 41px;
     z-index: 2;
 }
 
 .logo a {
+    width: 123px;
+    height: 41px;
     text-decoration: none;
     color: #ffffff;
 }
@@ -70,13 +73,13 @@ header {
 }
 
 .busca input:focus {
-    border-color: #007bff;
+    border-color: #8b8b8b66;
 }
 
 .busca button {
     padding: 10px 20px;
     font-size: 17px;
-    background-color: #007bff;
+    background-color: #8b8b8b;
     color: white;
     border: none;
     border-radius: 0 25px 25px 0;
@@ -85,7 +88,8 @@ header {
 }
 
 .busca button:hover {
-    background-color: #0056b3;
+    color: #000000;
+    background-color: #c8c8c8;
 }
 
 .icones {
@@ -122,7 +126,8 @@ main {
 
 .filtros {
     width: 200px;
-    margin-right: 0px;;
+    margin-right: 0px;
+    ;
     background-color: #f9f9f9;
     padding: 10px;
     border-radius: 8px;
