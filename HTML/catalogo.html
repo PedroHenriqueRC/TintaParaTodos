@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tinta para Todos - Sua loja de tintas</title>
     <link rel="icon" href="../IMG/favicon-logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../CSS/estilo.css" />
+    <link rel="stylesheet" href="../CSS/estilo_catálogo.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -19,15 +19,21 @@
                 <img src="../IMG/logo-tinta-para-todos.png" alt="logo tinta para todos" width="100%">
             </div>
         </a>
-        <div class="busca">
+        <div class="busca" style="position: relative;">
             <i class="fas fa-search"></i>
             <input type="text" id="buscar" placeholder="Buscar tintas...">
             <button onclick="pesquisar()">Pesquisar</button>
         </div>
-
-        <div class="icones">
-            <a href="#" style="color: white; margin-right: 15px;"><i class="fas fa-user"></i></a>
-            <a href="#" style="color: white;"><i class="fas fa-shopping-cart"></i></a>
+            <select id="filtro-daltonismo" onchange="aplicarFiltroDaltonismo()">
+                <option value="normal">Visão Normal</option>
+                <option value="acromatico">Acromático (Monocromático)</option>
+                <option value="dicromatico">Dicromático</option>
+                <option value="tricromatico">Tricromático Anômalo</option>
+            </select>
+            <div class="icones">
+                <a href="#" style="color: white;"><i class="fas fa-user"></i></a>
+                <a href="#" style="color: white;"><i class="fas fa-shopping-cart"></i></a>
+            </div>
         </div>
     </header>
 
@@ -393,6 +399,16 @@
         <p>&copy; 2025 Tinta para Todos - Sua loja de tintas. Todos os direitos reservados.</p>
     </footer>
 
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none;">
+        <filter id="filtro-dicromatico">
+            <feColorMatrix type="matrix" values="
+            0.367, 0.861, -0.228, 0, 0,
+            0.280, 0.673, 0.047, 0, 0,
+            -0.012, 0.043, 0.969, 0, 0,
+            0, 0, 0, 1, 0" />
+        </filter>
+    </svg>
+
 </body>
 
 </html>
@@ -442,5 +458,20 @@
             pesquisar();
         }
     });
+
+    function aplicarFiltroDaltonismo() {
+        const select = document.getElementById("filtro-daltonismo");
+        const valor = select.value;
+        document.body.className = ""; // Remove classes anteriores
+
+        if (valor === "acromatico") {
+            document.body.classList.add("acromatico");
+        } else if (valor === "dicromatico") {
+            document.body.classList.add("dicromatico");
+        } else if (valor === "tricromatico") {
+            document.body.classList.add("tricromatico");
+        }
+        // caso "normal", nenhuma classe é aplicada
+    }
 
 </script>
