@@ -7,6 +7,259 @@
   <title>Produto - Tinta Fosca Premium</title>
   <link rel="icon" href="../IMG/favicon-logo.png" type="image/x-icon">
   <link rel="stylesheet" href="../CSS/estilo_produto_matte1.css" />
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+header {
+  background: #003f5c;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.logo {
+  float: left;
+  font-size: 1.8rem;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+nav ul {
+  float: right;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#filtro-daltonismo {
+    width: 125px;
+    padding: 5px 10px;
+    background-color: #ffa600;
+    color: black;
+    border: none;
+    border-radius: 25px 25px 25px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.protanopia {
+  filter: url("#protanopia-filter"); /* Corrected! */
+}
+
+body.deuteranopia {
+  filter: url("#deuteranopia-filter");
+}
+
+body.tritanopia {
+  filter: url("#tritanopia-filter"); /* Corrected! */
+}
+
+body.acromatopsia {
+  filter: grayscale(100%);
+}
+
+.produto-detalhe {
+  padding: 2rem 0;
+  background: #fff;
+}
+
+.produto-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.produto-imagem {
+  flex: 1 1 40%;
+  display: flex;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+}
+
+.produto-imagem img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.produto-imagem {
+  position: relative;
+  display: inline-block;
+}
+
+.produto-imagem::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 10%;
+  left: 100%;
+  transform: translateX(-50%);
+  background-color: #003f5c;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: normal;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  max-width: 220px;
+  width: max-content;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.produto-imagem:hover::after {
+  opacity: 1;
+}
+
+.produto-info {
+  flex: 1 1 55%;
+}
+
+.produto-info h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.preco {
+  color: #003f5c;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.descricao {
+  margin-bottom: 1rem;
+}
+
+.especificacoes {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.especificacoes li {
+  margin-bottom: 0.5rem;
+}
+
+.produto-compra {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stepper input {
+  width: 50px;
+  text-align: center;
+  font-size: 16px;
+  height: 35px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.stepper .btn-menos,
+.stepper .btn-mais {
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.stepper .btn-menos:hover,
+.stepper .btn-mais:hover {
+  background-color: #ddd;
+}
+
+.comprar-btn {
+  display: inline-block;
+  background: #20C997;
+  border: 2px solid #19a379;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.comprar-btn:hover {
+  background: #168966;
+}
+
+footer {
+  background: #003f5c;
+  color: white;
+  text-align: center;
+  padding: 1.49rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+flex-direction: column;
+align-items: center;
+  }
+
+  .produto-grid {
+flex-direction: column;
+align-items: center;
+  }
+
+  .logo,
+  nav ul {
+float: none;
+text-align: center;
+  }
+}
+  </style>
 </head>
 
 <body>
@@ -20,6 +273,17 @@
           <li><a href="index.html#inicio">Início</a></li>
           <li><a href="index.html#produtos">Produtos</a></li>
           <li><a href="index.html#contato">Contato</a></li>
+          <li>
+            <a>
+              <select id="filtro-daltonismo" onchange="aplicarFiltroDaltonismo()">
+                <option value="normal">Visão Normal</option>
+                <option value="protanopia">Protanopia</option>
+                <option value="deuteranopia">Deuteranopia</option>
+                <option value="tritanopia">Tritanopia</option>
+                <option value="acromatopsia">Acromatopsia</option>
+              </select>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -28,7 +292,7 @@
   <section class="produto-detalhe">
     <div class="container">
       <div class="produto-grid">
-        
+
         <div class="produto-imagem"
           data-tooltip="Branco neve é uma cor extremamente clara, quase brilhante, que transmite a ideia de pureza e frieza. É a cor que você vê em coisas como papel limpo, leite, ou a luz forte de uma lâmpada fluorescente. Diferente de tons acinzentados ou azulados, ele é neutro, sem nenhum tom de cor forte misturado — como se fosse a ausência total de sujeira ou cor. Imagine o reflexo da luz do sol sobre uma superfície limpa e gelada: essa é a sensação do branco neve.">
           <img src="../IMG/Coral-Decora-Matte-Galao.png" alt="Imagem do Galão de tinta matte">
@@ -62,8 +326,29 @@
   </section>
 
   <footer>
-        <p>&copy; 2025 Tinta para Todos - Sua loja de tintas. Todos os direitos reservados.</p>
+    <p>&copy; 2025 Tinta para Todos - Sua loja de tintas. Todos os direitos reservados.</p>
   </footer>
+
+  <svg style="display: none;">
+    <filter id="protanopia-filter">
+      <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0
+              0.558, 0.442, 0, 0, 0
+              0, 0.242, 0.758, 0, 0
+              0, 0, 0, 1, 0" />
+    </filter>
+    <filter id="deuteranopia-filter">
+      <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0
+              0.7, 0.3, 0, 0, 0
+              0, 0.3, 0.7, 0, 0
+              0, 0, 0, 1, 0" />
+    </filter>
+    <filter id="tritanopia-filter">
+      <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0
+              0, 0.433, 0.567, 0, 0
+              0, 0.475, 0.525, 0, 0
+              0, 0, 0, 1, 0" />
+    </filter>
+  </svg>
 
 </body>
 
@@ -77,4 +362,21 @@
     if (novaQuantidade < 1) novaQuantidade = 1;
     input.value = novaQuantidade;
   }
+  
+    function aplicarFiltroDaltonismo() {
+        const select = document.getElementById("filtro-daltonismo");
+        const valor = select.value;
+        document.body.className = "";
+
+        if (valor === "protanopia") {
+            document.body.classList.add("protanopia");
+        } else if (valor === "deuteranopia") {
+            document.body.classList.add("deuteranopia");
+        } else if (valor === "tritanopia") {
+            document.body.classList.add("tritanopia");
+        } else if (valor === "acromatopsia") {
+            document.body.classList.add("acromatopsia");
+        }
+
+    }
 </script>

@@ -56,18 +56,33 @@ header {
     z-index: 1;
 }
 
-body.acromatico {
+#filtro-daltonismo {
+    width: 165px;
+    padding: 10px 20px;
+    font-size: 17px;
+    background-color: #8b8b8b;
+    color: white;
+    border: none;
+    border-radius: 25px 25px 25px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.protanopia {
+    filter: url("#tritanopia-filter");
+}
+
+body.deuteranopia {
+    filter: url("#deuteranopia-filter");
+}
+
+body.tritanopia {
+    filter: url("#protanopia-filter");
+}
+
+body.acromatopsia {
     filter: grayscale(100%);
 }
-
-body.dicromatico {
-    filter: url("#filtro-dicromatico");
-}
-
-body.tricromatico {
-    filter: sepia(60%) hue-rotate(30deg) saturate(120%);
-}
-
 
 .busca i {
     position: absolute;
@@ -109,17 +124,7 @@ body.tricromatico {
     background-color: #c8c8c8;
 }
 
-#filtro-daltonismo {
-    width: 160px;
-    padding: 10px 20px;
-    font-size: 17px;
-    background-color: #8b8b8b;
-    color: white;
-    border: none;
-    border-radius: 25px 25px 25px 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+
 
 .icones {
     display: flex;
@@ -305,7 +310,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-
+    
     header,
     .topbar {
         flex-direction: column;

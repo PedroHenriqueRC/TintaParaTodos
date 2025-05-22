@@ -33,6 +33,34 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+body.protanopia {
+    filter: url("#tritanopia-filter");
+}
+
+body.deuteranopia {
+    filter: url("#deuteranopia-filter");
+}
+
+body.tritanopia {
+    filter: url("#protanopia-filter");
+}
+
+body.acromatopsia {
+    filter: grayscale(100%);
+}
+
+#filtro-daltonismo {
+    width: 125px;
+    padding: 5px 10px;
+    background-color: #ffa600;
+    color: black;
+    border: none;
+    border-radius: 25px 25px 25px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
 header .container {
   display: flex;
   align-items: center;
@@ -305,32 +333,32 @@ footer {
 
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+display: block;
   }
 
   nav.menu ul {
-    flex-direction: column;
-    background: #003f5c;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    display: none;
-    padding: 1rem 0;
-    z-index: 999;
+flex-direction: column;
+background: #003f5c;
+position: absolute;
+top: 100%;
+right: 0;
+width: 100%;
+display: none;
+padding: 1rem 0;
+z-index: 999;
   }
 
   nav.menu ul li {
-    text-align: center;
-    padding: 0.5rem 0;
+text-align: center;
+padding: 0.5rem 0;
   }
 
   nav.menu ul.show {
-    display: flex;
+display: flex;
   }
 
   .grid {
-    flex-direction: column;
-    align-items: center;
+flex-direction: column;
+align-items: center;
   }
 }

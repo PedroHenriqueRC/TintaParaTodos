@@ -12,55 +12,55 @@
 <body>
 
   <header>
-    <div class="container">
-      <div class="logo"><a href="index.html"><img src="../IMG/logo-tinta-para-todos.png" alt="logo tinta para todos"
-            width="15%"></a></div>
-      <nav>
-        <ul>
-          <li><a href="index.html#inicio">Início</a></li>
-          <li><a href="index.html#produtos">Produtos</a></li>
-          <li><a href="index.html#contato">Contato</a></li>
-        </ul>
-      </nav>
-    </div>
+<div class="container">
+  <div class="logo"><a href="index.html"><img src="../IMG/logo-tinta-para-todos.png" alt="logo tinta para todos"
+width="15%"></a></div>
+  <nav>
+<ul>
+  <li><a href="index.html#inicio">Início</a></li>
+  <li><a href="index.html#produtos">Produtos</a></li>
+  <li><a href="index.html#contato">Contato</a></li>
+</ul>
+  </nav>
+</div>
   </header>
 
   <section class="produto-detalhe">
-    <div class="container">
-      <div class="produto-grid">
-        <div class="produto-imagem"
-          data-tooltip="Sombra da Noite é uma cor extremamente escura, quase preta, com um toque frio. Pode ser percebida apenas como uma mancha escura uniforme, parecida com o céu noturno em um lugar sem luz. Não é vibrante nem quente — transmite silêncio, profundidade e até mistério. Para quem enxerga com daltonismo, pode ser difícil diferenciá-la de um preto comum, mas ela tem um peso visual um pouco mais leve.">
-          <img src="../IMG/Coral-Decora-Seda-Galao.png" alt="Imagem do Galão de tinta matte">
-        </div>
-        <div class="produto-info">
-          <h1>Decora Seda Sombra da Noite</h1>
-          <p class="descricao">
-            Coral Decora Seda é um Acrílico Premium Acetinado, com cores mais vivas e um acabamento sofisticado, além de
-            ser resistente e fácil de limpar. O resultado são paredes com qualidade HD. </p>
-          <ul class="especificacoes">
-            <li><strong>Acabamento:</strong> Acetinado</li>
-            <li><strong>Rendimento:</strong> Galão 3,6 L: até 21 m²</li>
-            <li><strong>Secagem:</strong> Ao toque: 30 minutos. Entre demãos: 4 horas. Final: 4 horas. 2 a 3 demãos</li>
-            <li><strong>Aplicação:</strong> Rolo de lã de pelo baixo, pistola, pincel e trincha. Limpe as ferramentas
-              com água e sabão.</li>
-            <li><strong>Diluição:</strong> Até 20% com água potável</li>
-          </ul>
-          <p class="preco">R$ 205,32</p>
-          <div class="produto-compra">
-            <div class="stepper">
-              <button type="button" class="btn-menos" onclick="alterarQuantidade(-1)">−</button>
-              <input type="tel" id="quantidade" value="1" min="1">
-              <button type="button" class="btn-mais" onclick="alterarQuantidade(1)">＋</button>
-            </div>
-            <button type="button" class="comprar-btn">COMPRAR</button>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="container">
+  <div class="produto-grid">
+<div class="produto-imagem"
+  data-tooltip="Sombra da Noite é uma cor extremamente escura, quase preta, com um toque frio. Pode ser percebida apenas como uma mancha escura uniforme, parecida com o céu noturno em um lugar sem luz. Não é vibrante nem quente — transmite silêncio, profundidade e até mistério. Para quem enxerga com daltonismo, pode ser difícil diferenciá-la de um preto comum, mas ela tem um peso visual um pouco mais leve.">
+  <img src="../IMG/Coral-Decora-Seda-Galao.png" alt="Imagem do Galão de tinta matte">
+</div>
+<div class="produto-info">
+  <h1>Decora Seda Sombra da Noite</h1>
+  <p class="descricao">
+Coral Decora Seda é um Acrílico Premium Acetinado, com cores mais vivas e um acabamento sofisticado, além de
+ser resistente e fácil de limpar. O resultado são paredes com qualidade HD. </p>
+  <ul class="especificacoes">
+<li><strong>Acabamento:</strong> Acetinado</li>
+<li><strong>Rendimento:</strong> Galão 3,6 L: até 21 m²</li>
+<li><strong>Secagem:</strong> Ao toque: 30 minutos. Entre demãos: 4 horas. Final: 4 horas. 2 a 3 demãos</li>
+<li><strong>Aplicação:</strong> Rolo de lã de pelo baixo, pistola, pincel e trincha. Limpe as ferramentas
+  com água e sabão.</li>
+<li><strong>Diluição:</strong> Até 20% com água potável</li>
+  </ul>
+  <p class="preco">R$ 205,32</p>
+  <div class="produto-compra">
+<div class="stepper">
+  <button type="button" class="btn-menos" onclick="alterarQuantidade(-1)">−</button>
+  <input type="tel" id="quantidade" value="1" min="1">
+  <button type="button" class="btn-mais" onclick="alterarQuantidade(1)">＋</button>
+</div>
+<button type="button" class="comprar-btn">COMPRAR</button>
+  </div>
+</div>
+  </div>
+</div>
   </section>
 
   <footer>
-        <p>&copy; 2025 Tinta para Todos - Sua loja de tintas. Todos os direitos reservados.</p>
+<p>&copy; 2025 Tinta para Todos - Sua loja de tintas. Todos os direitos reservados.</p>
   </footer>
 
 </body>
@@ -70,9 +70,9 @@
 
 <script>
   function alterarQuantidade(valor) {
-    const input = document.getElementById("quantidade");
-    let novaQuantidade = parseInt(input.value) + valor;
-    if (novaQuantidade < 1) novaQuantidade = 1;
-    input.value = novaQuantidade;
+const input = document.getElementById("quantidade");
+let novaQuantidade = parseInt(input.value) + valor;
+if (novaQuantidade < 1) novaQuantidade = 1;
+input.value = novaQuantidade;
   }
 </script>

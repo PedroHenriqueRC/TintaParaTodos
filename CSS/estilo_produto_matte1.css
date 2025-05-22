@@ -18,26 +18,107 @@ body {
 }
 
 header {
-  background: #003f5c;
-  color: #fff;
-  padding: 1rem 0;
+    background-color: #003f5c; /* Kept the existing background color */
+    color: white;
+    /* Removed fixed positioning for now, as it might conflict with padding adjustments if not carefully managed.
+       If you need it fixed, ensure main content has a top padding equal to header's height. */
+    /* position: fixed; */
+    /* top: 0px; */
+    /* left: 0; */
+    width: 100%;
+    z-index: 1000;
+    height: auto; /* Allow height to adjust based on content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    /* Added padding to match footer's vertical padding and provide horizontal spacing */
+    padding: 1.49rem 0; /* Matches footer's padding */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Space out logo and nav */
 }
 
+/* Adjust the container within the header to manage its width */
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%; /* Maintain container width */
+    max-width: 1200px; /* Maintain max-width */
+    margin: auto; /* Center the container */
+    padding: 0 1rem; /* Add some horizontal padding inside the container */
+}
+
+/* Remove float from logo and adjust image size for better control */
 .logo {
-  float: left;
-  font-size: 1.8rem;
+    /* float: left; */ /* Remove float */
+    font-size: 1.8rem;
+    display: flex; /* Use flex to align image if needed */
+    align-items: center;
+}
+
+.logo img {
+    width: 150px; /* Set a specific width for the logo image */
+    max-width: 100%; /* Ensure it's responsive */
+    height: auto;
+}
+
+/* Remove float from nav and ensure flex layout */
+nav ul {
+    /* float: right; */ /* Remove float */
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center; /* Vertically center nav items */
+}
+
+/* Remove the header::after rule as floats are no longer used */
+/* header::after {
+    content: "";
+    display: table;
+    clear: both;
+} */
+
+/* Adjust main content padding to account for the header's presence if it's not fixed */
+main,
+section,
+.banner,
+.produtos,
+.sobre,
+.inspiracao,
+.contato,
+.produto-detalhe { /* Added .produto-detalhe for product page */
+    padding-top: 90px; /* Adjust this value if your header height changes significantly */
+}
+
+/* Media query adjustments for smaller screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack logo and nav vertically */
+        text-align: center;
+        padding: 1rem 0; /* Adjust padding for smaller screens */
+    }
+
+    header .container {
+        flex-direction: column;
+        gap: 1rem; /* Space between logo and nav when stacked */
+    }
+
+    .logo,
+    nav ul {
+        float: none; /* Ensure floats are removed */
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem; /* Adjust gap for vertical menu */
+    }
 }
 
 .logo a {
   text-decoration: none;
   color: #ffffff;
-}
-
-nav ul {
-  float: right;
-  list-style: none;
-  display: flex;
-  gap: 2rem;
 }
 
 nav a {
@@ -55,6 +136,34 @@ header::after {
   display: table;
   clear: both;
 }
+
+#filtro-daltonismo {
+    width: 125px;
+    padding: 5px 10px;
+    background-color: #ffa600;
+    color: black;
+    border: none;
+    border-radius: 25px 25px 25px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.protanopia {
+    filter: url("#tritanopia-filter");
+}
+
+body.deuteranopia {
+    filter: url("#deuteranopia-filter");
+}
+
+body.tritanopia {
+    filter: url("#protanopia-filter");
+}
+
+body.acromatopsia {
+    filter: grayscale(100%);
+}
+
 
 .produto-detalhe {
   padding: 2rem 0;
@@ -207,18 +316,18 @@ footer {
 
 @media (max-width: 768px) {
   nav ul {
-    flex-direction: column;
-    align-items: center;
+flex-direction: column;
+align-items: center;
   }
 
   .produto-grid {
-    flex-direction: column;
-    align-items: center;
+flex-direction: column;
+align-items: center;
   }
 
   .logo,
   nav ul {
-    float: none;
-    text-align: center;
+float: none;
+text-align: center;
   }
 }

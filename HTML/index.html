@@ -20,10 +20,17 @@
         <ul>
           <li><a href="#inicio">Início</a></li>
           <li><a href="#produtos">Produtos</a></li>
-          <li><a href="catalogo.html">Catálogo</a></li>
           <li><a href="#inspiracao">Inspiração</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#contato">Contato</a></li>
+          <li><a>
+              <select id="filtro-daltonismo" onchange="aplicarFiltroDaltonismo()">
+                <option value="normal">Visão Normal</option>
+                <option value="protanopia">Protanopia</option>
+                <option value="deuteranopia">Deuteranopia</option>
+                <option value="tritanopia">Tritanopia</option>
+                <option value="acromatopsia">Acromatopsia</option>
+              </select></a></li>
         </ul>
       </nav>
     </div>
@@ -174,8 +181,30 @@
   </section>
 
   <footer>
-        <p>&copy; 2025 Tinta para Todos - Sua loja de tintas. Todos os direitos reservados.</p>
+    <p>&copy; 2025 Tinta para Todos - Sua loja de tintas. Todos os direitos reservados.</p>
   </footer>
+
+  <svg style="display: none;">
+    <filter id="protanopia-filter">
+      <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0
+              0.558, 0.442, 0, 0, 0
+              0, 0.242, 0.758, 0, 0
+              0, 0, 0, 1, 0" />
+    </filter>
+    <filter id="deuteranopia-filter">
+      <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0
+              0.7, 0.3, 0, 0, 0
+              0, 0.3, 0.7, 0, 0
+              0, 0, 0, 1, 0" />
+    </filter>
+    <filter id="tritanopia-filter">
+      <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0
+              0, 0.433, 0.567, 0, 0
+              0, 0.475, 0.525, 0, 0
+              0, 0, 0, 1, 0" />
+    </filter>
+  </svg>
+
 </body>
 
 </html>
@@ -187,4 +216,22 @@
   toggle.addEventListener('click', () => {
     menu.classList.toggle('show');
   });
+
+  function aplicarFiltroDaltonismo() {
+    const select = document.getElementById("filtro-daltonismo");
+    const valor = select.value;
+    document.body.className = "";
+
+    if (valor === "protanopia") {
+      document.body.classList.add("protanopia");
+    } else if (valor === "deuteranopia") {
+      document.body.classList.add("deuteranopia");
+    } else if (valor === "tritanopia") {
+      document.body.classList.add("tritanopia");
+    } else if (valor === "acromatopsia") {
+      document.body.classList.add("acromatopsia");
+    }
+
+  }
+
 </script>
