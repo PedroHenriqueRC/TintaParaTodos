@@ -12,57 +12,89 @@
 <body>
 
   <header>
-<div class="container">
-  <div class="logo"><a href="index.html"><img src="../IMG/logo-tinta-para-todos.png" alt="logo tinta para todos"
-width="15%"></a></div>
-  <nav>
-<ul>
-  <li><a href="index.html#inicio">Início</a></li>
-  <li><a href="index.html#produtos">Produtos</a></li>
-  <li><a href="index.html#contato">Contato</a></li>
-</ul>
-  </nav>
-</div>
+    <div class="container">
+      <div class="logo"><a href="index.html"><img src="../IMG/logo-tinta-para-todos.png" alt="logo tinta para todos"
+            width="15%"></a></div>
+      <nav>
+        <ul>
+          <li><a href="index.html#inicio">Início</a></li>
+          <li><a href="index.html#produtos">Produtos</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+          <li>
+            <a>
+              <select id="filtro-daltonismo" onchange="aplicarFiltroDaltonismo()">
+                <option value="normal">Visão Normal</option>
+                <option value="protanopia">Protanopia</option>
+                <option value="deuteranopia">Deuteranopia</option>
+                <option value="tritanopia">Tritanopia</option>
+                <option value="acromatopsia">Acromatopsia</option>
+              </select>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <section class="produto-detalhe">
-<div class="container">
-  <div class="produto-grid">
-<div class="produto-imagem" 
-data-tooltip="Superfície Lunar é uma cor muito clara, próxima do branco, mas com um toque frio e neutro. Pode lembrar o tom das pedras claras ou da poeira fina refletindo luz suave. Transmite uma sensação de calma e simplicidade, como a luz do fim da tarde sobre uma superfície lisa. Para um daltônico, ela pode parecer um branco suave, mais frio e apagado do que o branco neve.">
-  <img src="../IMG/Coral-Decora-Diamante-Galao.png" alt="Imagem do Galão de tinta matte">
-</div>
-<div class="produto-info">
-  <h1>Decora Diamante Superfície Lunar</h1>
-  <p class="descricao">
-Coral Decora Diamante é um Acrílico Premium Semi Brilho de alta resistência e fácil de limpar, oferece cores
-mais vivas e um acabamento com brilho. O resultado são paredes com qualidade HD.
-  </p>
-  <ul class="especificacoes">
-<li><strong>Acabamento:</strong> Semibrilho</li>
-<li><strong>Rendimento:</strong> Galão 3,6 l: até 22 m²</li>
-<li><strong>Secagem:</strong> Ao toque: 30 minutos. Entre demãos: 4 horas. Final: 4 horas. 2 a 3 demãos</li>
-<li><strong>Aplicação:</strong> Rolo de lã de pelo baixo, pistola, pincel e trincha. Limpe as ferramentas
-  com água e sabão.</li>
-<li><strong>Diluição:</strong> Diluir até 20% com água potável.</li>
-  </ul>
-  <p class="preco">R$ 215,35</p>
-  <div class="produto-compra">
-<div class="stepper">
-  <button type="button" class="btn-menos" onclick="alterarQuantidade(-1)">−</button>
-  <input type="tel" id="quantidade" value="1" min="1">
-  <button type="button" class="btn-mais" onclick="alterarQuantidade(1)">＋</button>
-</div>
-<button type="button" class="comprar-btn">COMPRAR</button>
-  </div>
-</div>
-  </div>
-</div>
+    <div class="container">
+      <div class="produto-grid">
+        <div class="produto-imagem"
+          data-tooltip="Superfície Lunar é uma cor muito clara, próxima do branco, mas com um toque frio e neutro. Pode lembrar o tom das pedras claras ou da poeira fina refletindo luz suave. Transmite uma sensação de calma e simplicidade, como a luz do fim da tarde sobre uma superfície lisa. Para um daltônico, ela pode parecer um branco suave, mais frio e apagado do que o branco neve.">
+          <img src="../IMG/Coral-Decora-Diamante-Galao.png" alt="Imagem do Galão de tinta matte">
+        </div>
+        <div class="produto-info">
+          <h1>Decora Diamante Superfície Lunar</h1>
+          <p class="descricao">
+            Coral Decora Diamante é um Acrílico Premium Semi Brilho de alta resistência e fácil de limpar, oferece cores
+            mais vivas e um acabamento com brilho. O resultado são paredes com qualidade HD.
+          </p>
+          <ul class="especificacoes">
+            <li><strong>Acabamento:</strong> Semibrilho</li>
+            <li><strong>Rendimento:</strong> Galão 3,6 l: até 22 m²</li>
+            <li><strong>Secagem:</strong> Ao toque: 30 minutos. Entre demãos: 4 horas. Final: 4 horas. 2 a 3 demãos</li>
+            <li><strong>Aplicação:</strong> Rolo de lã de pelo baixo, pistola, pincel e trincha. Limpe as ferramentas
+              com água e sabão.</li>
+            <li><strong>Diluição:</strong> Diluir até 20% com água potável.</li>
+          </ul>
+          <p class="preco">R$ 215,35</p>
+          <div class="produto-compra">
+            <div class="stepper">
+              <button type="button" class="btn-menos" onclick="alterarQuantidade(-1)">−</button>
+              <input type="tel" id="quantidade" value="1" min="1">
+              <button type="button" class="btn-mais" onclick="alterarQuantidade(1)">＋</button>
+            </div>
+            <button type="button" class="comprar-btn">COMPRAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
-<p>&copy; 2025 Tinta para Todos - Sua loja de tintas. Todos os direitos reservados.</p>
+    <p>&copy; 2025 Tinta para Todos - Sua loja de tintas. Todos os direitos reservados.</p>
   </footer>
+
+  <svg style="display: none;">
+    <filter id="protanopia-filter">
+      <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0
+              0.558, 0.442, 0, 0, 0
+              0, 0.242, 0.758, 0, 0
+              0, 0, 0, 1, 0" />
+    </filter>
+    <filter id="deuteranopia-filter">
+      <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0
+              0.7, 0.3, 0, 0, 0
+              0, 0.3, 0.7, 0, 0
+              0, 0, 0, 1, 0" />
+    </filter>
+    <filter id="tritanopia-filter">
+      <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0
+              0, 0.433, 0.567, 0, 0
+              0, 0.475, 0.525, 0, 0
+              0, 0, 0, 1, 0" />
+    </filter>
+  </svg>
 
 </body>
 
@@ -71,9 +103,27 @@ mais vivas e um acabamento com brilho. O resultado são paredes com qualidade HD
 
 <script>
   function alterarQuantidade(valor) {
-const input = document.getElementById("quantidade");
-let novaQuantidade = parseInt(input.value) + valor;
-if (novaQuantidade < 1) novaQuantidade = 1;
-input.value = novaQuantidade;
+    const input = document.getElementById("quantidade");
+    let novaQuantidade = parseInt(input.value) + valor;
+    if (novaQuantidade < 1) novaQuantidade = 1;
+    input.value = novaQuantidade;
+  }
+
+
+  function aplicarFiltroDaltonismo() {
+    const select = document.getElementById("filtro-daltonismo");
+    const valor = select.value;
+    document.body.className = "";
+
+    if (valor === "protanopia") {
+      document.body.classList.add("protanopia");
+    } else if (valor === "deuteranopia") {
+      document.body.classList.add("deuteranopia");
+    } else if (valor === "tritanopia") {
+      document.body.classList.add("tritanopia");
+    } else if (valor === "acromatopsia") {
+      document.body.classList.add("acromatopsia");
+    }
+
   }
 </script>

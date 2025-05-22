@@ -18,26 +18,88 @@ body {
 }
 
 header {
-  background: #003f5c;
-  color: #fff;
-  padding: 1rem 0;
+    background-color: #003f5c;
+    color: white;
+
+    width: 100%;
+    z-index: 1000;
+    height: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    padding: 1.49rem 0;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%; 
+    max-width: 1200px;
+    margin: auto; 
+    padding: 0 1rem;
 }
 
 .logo {
-  float: left;
-  font-size: 1.8rem;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px; 
+    max-width: 100%;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center; 
+}
+
+main,
+section,
+.banner,
+.produtos,
+.sobre,
+.inspiracao,
+.contato,
+.produto-detalhe { 
+    padding-top: 90px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0; 
+    }
+
+    header .container {
+        flex-direction: column;
+        gap: 1rem;     
+      }
+
+    .logo,
+    nav ul {
+        float: none;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem; 
+    }
 }
 
 .logo a {
   text-decoration: none;
   color: #ffffff;
-}
-
-nav ul {
-  float: right;
-  list-style: none;
-  display: flex;
-  gap: 2rem;
 }
 
 nav a {
@@ -55,6 +117,34 @@ header::after {
   display: table;
   clear: both;
 }
+
+#filtro-daltonismo {
+    width: 125px;
+    padding: 5px 10px;
+    background-color: #8b8b8b;
+    color: white;
+    border: none;
+    border-radius: 25px 25px 25px 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.protanopia {
+    filter: url("#tritanopia-filter");
+}
+
+body.deuteranopia {
+    filter: url("#deuteranopia-filter");
+}
+
+body.tritanopia {
+    filter: url("#protanopia-filter");
+}
+
+body.acromatopsia {
+    filter: grayscale(100%);
+}
+
 
 .produto-detalhe {
   padding: 2rem 0;
